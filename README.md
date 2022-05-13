@@ -37,11 +37,16 @@ If you want to run this 99% hands free here is what you need to do. (This is the
 
 12. Assuming you have adjusted the ini Template (instructions below) you can now run the script manually. If you wish to automate it, keep following
 13. Open Terminal and type 
+ 
 crontab -e
+
 from here add the following line
+
 0 0 * * *  /home/(YourUserNameHere)/YTSpammerAutomater.sh
+
 then save and exit the file (assuming you are using nano) with CTRL+o, enter, CTRL+x
 This cron will run the YTSpammerAutomater.sh at midnight (of you machine time) if you wish to change it, the first 0 is the minute the second 0 is the hour
+
 so 15 7 * * * will be 7.15am
 
 ## ini Template adjustments
