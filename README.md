@@ -1,4 +1,4 @@
-#Ziogref's YT spammer automater for Thio Joe's YT Spammer Purge tool
+# Ziogref's YT spammer automater for Thio Joe's YT Spammer Purge tool
 
 So just to start, this is my first bash script and first github project.
 
