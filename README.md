@@ -9,7 +9,7 @@ I have tested it on Ubuntu Server 22.04 LTS and Linux Mint 20.3
 So, this  tool will allow you takes an input file, template, and Oauth tokens and automatically pass the info through to Thio Joe's YT spammer Purge application automatically with 0 input from you besides updating token.pickle once a week.
 
 ## How to install
-If you want to run this 99% hands free here is what you need to do. (This is the way I found out hwo to make it work, there may be another way thats less....yucky but I havent found that)
+If you want to run this 99% hands free here is what you need to do. (This is the way I found out hwo to make it work, there may be another way thats less....yucky, but I havent found that)
 
 1. Download [Thio Joe's YT Spammer Purge tool](https://github.com/ThioJoe/YT-Spammer-Purge/wiki/Linux-Installation-Instructions) and install it.
 2. The install will create a directory with all the files, Move them to the root of your home directory. (You dont need to do this if you plan on running my script manually)
