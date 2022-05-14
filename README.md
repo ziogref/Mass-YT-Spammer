@@ -27,7 +27,7 @@ If you want to run this 99% hands free here is what you need to do. (This is the
 
 8. Follow [Thio Joes instructions](https://github.com/ThioJoe/YT-Spammer-Purge/wiki/Instructions:-Obtaining-an-API-Key) to create upto 5 projects for the script to use. This will give you 50,000 api calls instead of 10,000.
 * Name each client_secrets.json as client_secrets.json1, client_secrets.json2, client_secrets.json3 etc and place them in "APIProjectFiles"
-9. Create an 1 more aditional project the same way BUT wil will need an API key. So on the last project Project 6, go to "API's and services" --> "Credentials" and create an API key.
+9. Create an 1 more aditional project the same way BUT wil will need an API key. So on the last project Project 6, go to "API's and services" --> "Credentials" then up the top click "+ CREATE CREDENTIALS" and create an API key.
 10. Edit YTSpammerAutomater.sh, pay attention to 
 * Line 9, this is for your API key
 * Line 17, API Limit, adjust this accordingly to the comments
