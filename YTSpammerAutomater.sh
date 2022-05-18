@@ -1,12 +1,12 @@
 #!/bin/bash
 #Created on 29/04/2022 by Ziogref
-#Last modified 13/05/2022
+#Last modified 18/05/2022
 
 #Please create up to 6 projects in Google Cloud Console, 5 for YT spammer and 1 for the API key in this tool
 #If you use the Same Google account for all projects, you can use the same token.pickle file, but make 5 copies of it following the required naming this script calls for.
 #APIkey is needed to scan videos and do some math to break up into groups of (roughly) 10,000 api calls.
 #This is to ensure ThioJoes tool does not fail to scan from not enough API calls. 
-APIkey1="Please Place you API key between these quotation marks"
+APIkey1=""
 
 #Please set ThioJoe's YT spammer location here.
 #WARNING!! due to a limitation of thioJoes script you are unable to call "python3 /path/to/program/YTSpammerPurge.py" YOU HAVE to call "python3 YTSpammerPurge.py" because of this limitation this script must be placed into YT spammer program folder.
@@ -110,19 +110,40 @@ if [ -d "$APIProjectFiles" ]
 		clientsecretsjson4=$APIProjectFiles/client_secrets.json4
 		clientsecretsjson5=$APIProjectFiles/client_secrets.json5
 
-if [[ -f $tokenpickle1 && -f $tokenpickle2 && -f $tokenpickle3 && -f $tokenpickle4 && -f $tokenpickle5 && -f $clientsecretsjson1 && -f $clientsecretsjson2 && -f $clientsecretsjson3 && -f $clientsecretsjson4 && -f $clientsecretsjson5 ]]
-	then
+		if [[ ! -f $tokenpickle1 && ! -f $tokenpickle2 && ! -f $tokenpickle3 && ! -f $tokenpickle4 && ! -f $tokenpickle5 && ! -f $clientsecretsjson1 && ! -f $clientsecretsjson2 && ! -f $clientsecretsjson3 && ! -f $clientsecretsjson4 && ! -f $clientsecretsjson5 ]]
+		then
 
+		echo "token.pickle and/or client_secrets.json files are missing. Please ensure the files are located in $APIProjectFiles"
+		echo "they are to be named token.pickle1 token.pickle2 etc and client_secrets.json1 client_secrets.json2 etc"
+		echo "each are to be their own project in Google cloud"
+		echo "If you think you wont need more than say 1 or 2 projects you can create blank files but be warned if this script calculates than what you have allocated projects for ThioJoes program will fail to run those files"
+		exit 1
+	fi
+	else
+		mkdir $APIProjectFiles
+		echo "$APIProjectFiles" created
+		echo "please place token.pikle and client_secrets.json files in here named token.pickle1 token.pickle2 etc and client_secrets.json1 client_secrets.json2 etc"
+		echo "each are to be their own project in Google cloud"
+		echo "If you think you wont need more than say 1 or 2 projects you can create blank files but be warned if this script calculates than what you have allocated projects for ThioJoes program will fail to run those files"
+		exit 1
+fi
 #checks if subscriptions.csv exists, if it does continue the script, if doesn't jump to end and throw error
 #If this passes, the entire script will run, if it fails it will jump to the end of the script
 YTsubfile=$ProjectDir/subscriptions.csv
-if test -f "$YTsubfile"
+if test ! -f "$YTsubfile"
 	then
+		echo "$YTsubfile not found. Please ensure it is named subscriptions.csv and is located in $ProjectDir"
+		echo 'You can obtain this file from takeout.google.com. De-select all item then select "YouTube and YouTube Music" followed by "All YouTube data included, de-select all then select "subscription" this will export the file this script uses'
+		exit 1
+fi
 
 #Check for template
 Template=$ProjectDir/SpamPurgeConfig.ini
-if test -f "$Template"
+if test ! -f "$Template"
 	then
+		echo "Template ini file not found, please place template ini file in $ProjectDir called SpamPurgeConfig.ini"
+		exit 1
+fi
 
 ##########################################################################
 #Removes special characters from Channel Title
@@ -734,34 +755,6 @@ rm $TempDir/*
 ##########################################################################
 #Ending of script
 ##########################################################################
-
-#close ini file check
-	else
-		echo "Template ini file not found, please place template ini file in $ProjectDir called SpamPurgeConfig.ini"
-fi
-
-#closing if loop of subscriptions.csv check
-	else
-		echo "$YTsubfile not found. Please ensure it is named subscriptions.csv and is located in $ProjectDir"
-		echo 'You can obtain this file from takeout.google.com. De-select all item then select "YouTube and YouTube Music" followed by "All YouTube data included, de-select all then select "subscription" this will export the file this script uses'
-fi
-
-#closing if loop for token.pickle and client_secrets.json check 
-	else
-		echo "token.pickle and/or client_secrets.json files are missing. Please ensure the files are located in $APIProjectFiles"
-		echo "they are to be named token.pickle1 token.pickle2 etc and client_secrets.json1 client_secrets.json2 etc"
-		echo "each are to be their own project in Google cloud"
-		echo "If you think you wont need more than say 1 or 2 projects you can create blank files but be warned if this script calculates than what you have allocated projects for ThioJoes program will fail to run those files"
-fi
-	
-#closing if loop for API project folder
-	else
-		mkdir $APIProjectFiles
-		echo "$APIProjectFiles" created
-		echo "please place token.pikle and client_secrets.json files in here named token.pickle1 token.pickle2 etc and client_secrets.json1 client_secrets.json2 etc"
-		echo "each are to be their own project in Google cloud"
-		echo "If you think you wont need more than say 1 or 2 projects you can create blank files but be warned if this script calculates than what you have allocated projects for ThioJoes program will fail to run those files"
-fi
 
 #End message
 echo "Script has finished, thankyou for using ziogref's script that runs ThioJoes YT Spammer program that assists with the removal of spam on Youtube"
