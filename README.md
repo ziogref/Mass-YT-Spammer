@@ -73,4 +73,4 @@ Line 107 can be changed, but please pay attention to Line 15 in YTSpammerAutomat
 * Line 224 | delete_without_reviewing = True
 * Line 244 | removal_type = reportSpam
 
-Note: Im currently on some medication so my mental capacity is, well, reduced. Im mentally exhausted after work. So if you leave comments or request help or anything else that requires my response I may not be able to fix it or provide advice for the next month.
+Note: Im currently on some medication so my mental capacity is, well, reduced. Im mentally exhausted after work. So if you leave comments or request help or anything else that requires my response I may not be able to fix it or provide advice many days until end of the month.
