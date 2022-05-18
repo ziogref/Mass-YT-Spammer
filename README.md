@@ -40,7 +40,7 @@ If you want to run this 99% hands free here is what you need to do. (This is the
 * Line 17, API Limit, adjust this accordingly to the comments
 * Line 25, Spam Percentage, adjust this accordingly to the comment
 
-11. Place a client_secrets.json into the root and run in YTSpammerPurge.py manually. (if you plan on running this manually you will need to place it in YT-Spammer-Purge) This will open up a web-browser to authenticate. Once you authenticate a file called token.pickle is created. You can close the YT spammer, no need to run it further. Assuming you created the 5 projects all under the same google account, make 5 copies of token.pickle named token.pickle1, token.pickle2 etc into the "APIProjectFiles" folder. (The need for 5 identical token.pickle files is incase someone has a need for 5 different accounts,1 client_secrets and 1 token.pickle per google account)
+11. One at a time, place each client_secrets.json into YT-Spammer-Purge folder and run YTSpammerPurge.py manually. This will open up a web-browser to authenticate. Once you authenticate a file called token.pickle is created. You can close the YT spammer, no need to run it further. you will need to match the token.pickle to each client_secrets.json. so client_secrets.json1 MUST have the matching token.pickle named token.pickle1. Repeat the steps for each client_secrets.json and get the matching token.pickle to all be placed into the "APIProjectFiles" folder in "ZiogrefSpammer"
 
 12. Assuming you have adjusted the ini Template (instructions below) you can now run the script manually. If you wish to automate it, keep following
 13. Open Terminal and type 
